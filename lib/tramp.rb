@@ -8,6 +8,7 @@ class Tramp
   include Singleton
 
   def initialize
+    Mongoid.logger.level = Logger::WARN
     Mongoid.load!('./mongoid.yml')
 
     Twitter.configure do |config|
