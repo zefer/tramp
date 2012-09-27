@@ -1,0 +1,10 @@
+development:
+  host: localhost
+  database: tramp_development
+
+test:
+  host: localhost
+  database: tramp_test
+
+production:
+  uri: <%= ENV['MONGODB_URL'] %>
