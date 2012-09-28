@@ -71,7 +71,8 @@ class User
       users = { usernames: [], deleted: 0 }
       # API only allows you to query up to 100 users at a time
       ids.each_slice(100) do |some_ids|
-        Twitter.users(*some_ids).each {|u| users[:usernames] << u.screen_name}
+        # Twitter.users will raise an error if none of the ids are found, hence rescue nil
+        Twitter.users(*some_ids).each {|u| users[:usernames] << u.screen_name} rescue nil
       end
       users[:deleted] = ids.length - users[:usernames].length
 
