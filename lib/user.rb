@@ -51,14 +51,14 @@ class User
       Pony.mail({
         subject: subject.strip,
         to: email,
-        from: "Tramp <#{ENV['GMAIL_ADDRESS']}>",
+        from: ENV['EMAIL_FROM'],
         via: :smtp,
         via_options: {
-          address: 'smtp.gmail.com',
+          address: ENV['SMTP_HOST'],
           port: '587',
           enable_starttls_auto: true,
-          user_name: ENV['GMAIL_ADDRESS'],
-          password: ENV['GMAIL_PASSWORD'],
+          user_name: ENV['SMTP_USERNAME'],
+          password: ENV['SMTP_PASSWORD'],
           authentication: :plain,
           domain: "localhost.localdomain"
         },
