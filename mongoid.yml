@@ -1,10 +1,16 @@
 development:
-  host: localhost
-  database: tramp_development
+  clients:
+    default:
+      host: localhost
+      database: tramp_development
 
 test:
-  host: localhost
-  database: tramp_test
+  clients:
+    default:
+      host: localhost
+      database: tramp_test
 
 production:
-  uri: <%= ENV['MONGODB_URL'] %>
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_URL'] %>
