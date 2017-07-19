@@ -1,4 +1,4 @@
-# Tramp
+# Trampled
 
 A simple app that sends email notifications when user(s) loose or gain Twitter followers.
 
